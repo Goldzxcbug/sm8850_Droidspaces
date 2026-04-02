@@ -561,13 +561,14 @@ jobs:
             wget https://raw.githubusercontent.com/cyanmint/GKI_KernelSU_SUSFS/refs/heads/new/lxc_docker_patches/a16-6.12/gki_use_Android_ABI_padding_for_CGROUP_DEVICE_dev_cgroup_fields.patch            
             wget https://raw.githubusercontent.com/cyanmint/GKI_KernelSU_SUSFS/refs/heads/new/lxc_docker_patches/a16-6.12/gki_use_Android_ABI_padding_for_cgroup_subsys_struct.patch            
             wget https://raw.githubusercontent.com/cyanmint/GKI_KernelSU_SUSFS/refs/heads/new/lxc_docker_patches/a16-6.12/cgroup_fix_cgroup_prefix.patch
-            
+
+            patch -p1 < cgroup_fix_cgroup_prefix.patch
             patch -p1 < gki_use_Android_ABI_padding_for_SYSVIPC_task_struct_fields.patch
             patch -p1 < gki_use_Android_ABI_padding_for_ipc_namespace_struct.patch
             patch -p1 < gki_use_Android_ABI_padding_for_CGROUP_DEVICE_dev_cgroup_fields.patch
             patch -p1 < gki_use_Android_ABI_padding_for_cgroup_subsys_struct.patch
             patch -p1 < gki_cgroup_device_subsys_always_present.patch
-            patch -p1 < cgroup_fix_cgroup_prefix.patch
+
             cd ../
             # echo "CONFIG_EXPERT=y" >> ./common/arch/arm64/configs/gki_defconfig
             # 修复 [✗] PID namespace 和 [✗] IPC namespace
