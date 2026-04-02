@@ -566,7 +566,6 @@ jobs:
             patch -p1 < gki_use_Android_ABI_padding_for_SYSVIPC_task_struct_fields.patch
             patch -p1 < gki_use_Android_ABI_padding_for_ipc_namespace_struct.patch
             patch -p1 < gki_use_Android_ABI_padding_for_CGROUP_DEVICE_dev_cgroup_fields.patch
-            patch -p1 < gki_use_Android_ABI_padding_for_cgroup_subsys_struct.patch
             patch -p1 < gki_cgroup_device_subsys_always_present.patch
 
             cd ../
