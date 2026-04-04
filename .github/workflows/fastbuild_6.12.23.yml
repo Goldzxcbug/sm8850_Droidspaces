@@ -561,10 +561,10 @@ jobs:
             wget https://github.com/realme-kernel-opensource/realme_GT7pro-AndroidB-common-source/commit/8d6bde0f12171cd005c524fe3f278b69e2e1ac9d.patch
             wget https://github.com/realme-kernel-opensource/realme_GT7pro-AndroidB-common-source/commit/cc1730ca0eafead7f8738a293da83e97d26ec5b0.patch
             
-            patch -p0 < '90d4c953475d5042f43113d1d0bc1c93a0084f3b.patch'
-            patch -p0 < 'ad3ecded9090f5e4ff0e1373d0f4acdce1b64686.patch'
-            patch -p0 < '8d6bde0f12171cd005c524fe3f278b69e2e1ac9d.patch'
-            patch -p0 < 'cc1730ca0eafead7f8738a293da83e97d26ec5b0.patch'
+            patch -p1 < '90d4c953475d5042f43113d1d0bc1c93a0084f3b.patch'
+            patch -p1 < 'ad3ecded9090f5e4ff0e1373d0f4acdce1b64686.patch'
+            patch -p1 < '8d6bde0f12171cd005c524fe3f278b69e2e1ac9d.patch'
+            patch -p1 < 'cc1730ca0eafead7f8738a293da83e97d26ec5b0.patch'
 
 
             cd ../
