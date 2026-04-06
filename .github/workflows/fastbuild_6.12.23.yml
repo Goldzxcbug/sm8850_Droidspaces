@@ -717,11 +717,8 @@ jobs:
           
       - name : 打包staging
         run : |
-             tar czf ~/work/sm8850_Droidspaces/sm8850_Droidspaces/kernel_workspace/awa.tar.gz ~/work/sm8850_Droidspaces/sm8850_Droidspaces/kernel_workspace
+             tar czf ~/work/sm8850_Droidspaces/sm8850_Droidspaces/kernel_workspace/awa.tar.gz ~/work/sm8850_Droidspaces/sm8850_Droidspaces/kernel_workspace/common
 
-
-
-        
       - name: 保存新的 ccache 缓存
         if: inputs.ccache_update || steps.ccache-restore.outputs.cache-hit != 'true'
         uses: actions/cache/save@v5
