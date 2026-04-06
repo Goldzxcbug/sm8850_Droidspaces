@@ -557,8 +557,10 @@ jobs:
             # cd kernel_workspace/common/drivers/kernelsu
             
             wget https://raw.githubusercontent.com/Goldzxcbug/Kernel_patch/refs/heads/main/Droidspaces/01.6.1%2B_disable_crc_checks_for_lkms.patch
-            
+            wget https://raw.githubusercontent.com/Goldzxcbug/Kernel_patch/refs/heads/main/Droidspaces/lkm_ipc.patch
+
             patch -p1 < '01.6.1+_disable_crc_checks_for_lkms.patch'
+            patch -p1 < 'lkm_ipc.patch'
 
             cd ../
             # echo "CONFIG_EXPERT=y" >> ./common/arch/arm64/configs/gki_defconfig
