@@ -554,13 +554,9 @@ jobs:
       - name: 注入DroidSpaces内核配置
         run: |
             cd kernel_workspace/common
-            wget https://raw.githubusercontent.com/ravindu644/Droidspaces-OSS/refs/heads/main/Documentation/resources/kernel-patches/GKI/03.5.15%2B_use_android_abi_padding_for_posix_mqueue.patch
-            wget https://raw.githubusercontent.com/ravindu644/Droidspaces-OSS/refs/heads/main/Documentation/resources/kernel-patches/GKI/04.use_android_abi_padding_for_sysvipc_task_struct.patch
-            wget https://raw.githubusercontent.com/ravindu644/Droidspaces-OSS/refs/heads/main/Documentation/resources/kernel-patches/GKI/01.6.1%2B_disable_crc_checks_for_lkms.patch
+            wget https://raw.githubusercontent.com/superturtlee/kernel-workshop-docker/refs/heads/main/patch/fulldocker/superkernel.diff
+            patch -p1 < 'superkernel.diff'
 
-            patch -p1 < '01.6.1+_disable_crc_checks_for_lkms.patch'
-            patch -p1 < '04.use_android_abi_padding_for_sysvipc_task_struct.patch'
-            patch -p1 < '03.5.15+_use_android_abi_padding_for_posix_mqueue.patch'
             
             cd ../
             # 修复 [✗] PID namespace 和 [✗] IPC namespace
