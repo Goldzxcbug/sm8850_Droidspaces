@@ -558,6 +558,8 @@ jobs:
             wget https://raw.githubusercontent.com/ravindu644/Droidspaces-OSS/refs/heads/main/Documentation/resources/kernel-patches/GKI/04.use_android_abi_padding_for_sysvipc_task_struct.patch
 
             patch -p1 < '04.use_android_abi_padding_for_sysvipc_task_struct.patch'
+            patch -p1 < '03.5.15+_use_android_abi_padding_for_posix_mqueue.patch'
+            
             cd ../
             # 修复 [✗] PID namespace 和 [✗] IPC namespace
               echo "CONFIG_SYSVIPC=y" >> ./common/arch/arm64/configs/gki_defconfig
