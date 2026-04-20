@@ -555,8 +555,8 @@ jobs:
         run: |
             cd kernel_workspace/common
             wget https://raw.githubusercontent.com/superturtlee/kernel-workshop-docker/refs/heads/main/patch/fulldocker/superkernel.diff
-            wget https://raw.githubusercontent.com/Goldzxcbug/Droidspaces_Kernel_patch/refs/heads/main/NTsync/ntsync_base.patch
-            wget https://raw.githubusercontent.com/Goldzxcbug/Droidspaces_Kernel_patch/refs/heads/main/NTsync/ntsync_compat_android16-6.12.patch
+            wget "https://raw.githubusercontent.com/Goldzxcbug/Droidspaces_Kernel_patch/refs/heads/main/NTsync/ntsync_base.patch"
+            wget "https://raw.githubusercontent.com/Goldzxcbug/Droidspaces_Kernel_patch/refs/heads/main/NTsync/ntsync_compat_android16-6.12.patch"
             patch -p1 < superkernel.diff
             patch -p1 < 'ntsync_base.patch'
             patch -p1 < 'ntsync_compat_android16-6.12.patch'
