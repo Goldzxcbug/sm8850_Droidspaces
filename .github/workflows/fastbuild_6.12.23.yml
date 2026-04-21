@@ -557,7 +557,7 @@ jobs:
             wget https://raw.githubusercontent.com/Goldzxcbug/Droidspaces_Kernel_patch/refs/heads/main/OKI/6.12/03.5.15%2B_use_android_abi_padding_for_posix_mqueue.patch
             wget https://raw.githubusercontent.com/Goldzxcbug/Droidspaces_Kernel_patch/refs/heads/main/OKI/6.12/SYSVIPC.patch
             patch -p1 < '03.5.15+_use_android_abi_padding_for_posix_mqueue.patch'
-            patcj -p1 < 'SYSVIPC.patch'
+            patch -p1 < 'SYSVIPC.patch'
             
             
             cd ../
