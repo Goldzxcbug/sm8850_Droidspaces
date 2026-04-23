@@ -558,9 +558,11 @@ jobs:
             wget https://raw.githubusercontent.com/Goldzxcbug/Droidspaces_Kernel_patch/refs/heads/main/OKI/6.12/SYSVIPC.patch
             wget "https://raw.githubusercontent.com/Goldzxcbug/Droidspaces_Kernel_patch/refs/heads/main/NTsync/ntsync_compat_android16-6.12.patch"
             wget "https://raw.githubusercontent.com/Goldzxcbug/Droidspaces_Kernel_patch/refs/heads/main/NTsync/ntsync_base.patch"
+            rm -f drivers/misc/ntsync.c include/uapi/linux/ntsync.h
             patch -p1 < 'pid_oplus_bsp_midas.patch'
             patch -p1 < 'SYSVIPC.patch'
             patch -p1 < 'ntsync_compat_android16-6.12.patch'
+            patch -p1 < 'ntsync_base.patch'
             
             
             cd ../
