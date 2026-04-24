@@ -558,7 +558,7 @@ jobs:
             wget https://raw.githubusercontent.com/Goldzxcbug/Droidspaces_Kernel_patch/refs/heads/main/OKI/6.12/SYSVIPC.patch
             wget "https://raw.githubusercontent.com/Goldzxcbug/Droidspaces_Kernel_patch/refs/heads/main/NTsync/ntsync_compat_android16-6.12.patch"
             wget "https://raw.githubusercontent.com/Goldzxcbug/Droidspaces_Kernel_patch/refs/heads/main/NTsync/ntsync_base.patch"
-            rm -f drivers/misc/ntsync.c include/uapi/linux/ntsync.h
+            # rm -f drivers/misc/ntsync.c include/uapi/linux/ntsync.h
             patch -p1 < 'pid_oplus_bsp_midas.patch'
             patch -p1 < 'SYSVIPC.patch'
             # patch -p1 < 'ntsync_compat_android16-6.12.patch'
@@ -566,7 +566,7 @@ jobs:
             
             
             cd ../
-              echo "CONFIG_NTSYNC=y" >> ./common/arch/arm64/configs/gki_defconfig
+            #  echo "CONFIG_NTSYNC=y" >> ./common/arch/arm64/configs/gki_defconfig
             # 修复 [✗] PID namespace 和 [✗] IPC namespace
               echo "CONFIG_SYSVIPC=y" >> ./common/arch/arm64/configs/gki_defconfig
               echo "CONFIG_POSIX_MQUEUE=y" >> ./common/arch/arm64/configs/gki_defconfig
