@@ -561,8 +561,8 @@ jobs:
             rm -f drivers/misc/ntsync.c include/uapi/linux/ntsync.h
             patch -p1 < 'pid_oplus_bsp_midas.patch'
             patch -p1 < 'SYSVIPC.patch'
-            patch -p1 < 'ntsync_compat_android16-6.12.patch'
-            patch -p1 < 'ntsync_base.patch'
+            # patch -p1 < 'ntsync_compat_android16-6.12.patch'
+            # patch -p1 < 'ntsync_base.patch'
             
             
             cd ../
