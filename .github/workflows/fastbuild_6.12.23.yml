@@ -474,6 +474,8 @@ jobs:
           wget "https://github.com/Goldzxcbug/Droidspaces_Kernel_patch/raw/refs/heads/main/OKI/6.12/SYSVIPC.patch"
           wget "https://github.com/Goldzxcbug/Droidspaces_Kernel_patch/raw/refs/heads/main/OKI/6.12/midas_sched_assist_2in1_fix.patch"
           wget "https://github.com/Goldzxcbug/Droidspaces_Kernel_patch/raw/refs/heads/main/OKI/6.12/pid_oplus_bsp_midas.patch"
+          wget https://github.com/$GITHUB_REPOSITORY/raw/refs/heads/$GITHUB_REF_NAME/droidspaces_patch/ntsync_compat_${{ env.ANDROID_VERSION }}-${{ env.KERNEL_VERSION }}.patch
+          patch -p1 -F 3 < ntsync_compat_${{ env.ANDROID_VERSION }}-${{ env.KERNEL_VERSION }}.patch || true
           patch -p1 < 'SYSVIPC.patch'
           patch -p1 < 'midas_sched_assist_2in1_fix.patch'
           patch -p1 < 'pid_oplus_bsp_midas.patch'
@@ -485,6 +487,8 @@ jobs:
           echo "CONFIG_PID_NS=y" >> ./arch/arm64/configs/gki_defconfig
           # 硬件访问
           echo "CONFIG_DEVTMPFS=y" >> ./arch/arm64/configs/gki_defconfig
+          # 开启 NTSync
+          echo "CONFIG_NTSYNC=y" >> ./arch/arm64/configs/gki_defconfig
           
       - name: 启用ADIOS IO调度器
         if: inputs.adios_enable
